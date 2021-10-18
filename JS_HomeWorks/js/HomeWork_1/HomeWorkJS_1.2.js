@@ -3,10 +3,10 @@ var array = [45, '246', 73, '4', 15, 36, 17, 89, '49', 167, 123];
 var n = 0;
 
 for (var i = 0; i < array.length; i++) {
-	if (isNaN(array[i]) === true) {
+	if (isNaN(array[i])) {
 		array[i] = +(array[i]);
 	}
-	if (array[i] % 3 === 0) {
+	if (!array[i] % 3 ) {
 		n++;
 	}
 }
@@ -17,10 +17,10 @@ var array = [45, '246', 73, '4', 15, 36, 17, 89, '49', 167, 123];
 var n = 0;
 var i = 0;
 while (i < array.length) {
-	if (isNaN(array[i]) === true) {
+	if (isNaN(array[i])) {
 		array[i] = +(array[i]);
 	}
-	if (array[i] % 3 === 0) {
+	if (!array[i] % 3) {
 		n++;
 	}
 	i++;
@@ -33,10 +33,10 @@ var n = 0;
 var i = 0;
 
 do {
-	if (isNaN(array[i]) === true) {
+	if (isNaN(array[i])) {
 		array[i] = +(array[i]);
 	}
-	if (array[i] % 3 === 0) {
+	if (!array[i] % 3) {
 		n++;
 	}
 	i++;
