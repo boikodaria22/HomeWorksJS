@@ -11,7 +11,6 @@ function showStudentsFavoriteLessons() {
     }
   }
   for (var i = 0; i < arguments.length; i++) {
-   
     console.log(checkStudentFavoriteLessons(arguments[i]));
   }
 }
