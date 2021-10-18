@@ -1,7 +1,7 @@
 function checkArrayFunc(...arguments) {
 	var arr = [];
 	for (var i = 0; i <= arguments.length; i++) {
-		if (Array.isArray(arguments[i]) === true) {
+		if (Array.isArray(arguments[i])) {
 			arr.push(arguments[i]);
 		}
 	}
