@@ -4,7 +4,7 @@ function showStudentsFavoriteLessons() {
   function checkStudentFavoriteLessons(studentName) {
     var n = Math.floor(Math.random() * (lessons.length - 1));
     var favoriteLesson = lessons.slice(lessons.length - n);
-    if (favoriteLesson.length > 0) {
+    if (favoriteLesson.length) {
       return `${studentName}: ${favoriteLesson.join(', ')}`;
     } else {
       return `${studentName}: У этого студента нет любимых предметов`;
