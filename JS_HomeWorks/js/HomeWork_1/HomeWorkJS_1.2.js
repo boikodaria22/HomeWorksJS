@@ -5,7 +5,7 @@ for (var i = 0; i < array.length; i++) {
   if (isNaN(array[i])) {
     array[i] = +(array[i]);
   }
-  if (!array[i] % 3) {
+  if (array[i] % 3) {
     n++;
   }
 }
@@ -18,7 +18,7 @@ while (i < array.length) {
   if (isNaN(array[i])) {
     array[i] = +(array[i]);
   }
-  if (!array[i] % 3) {
+  if (array[i] % 3) {
     n++;
   }
   i++;
@@ -32,7 +32,7 @@ do {
   if (isNaN(array[i])) {
     array[i] = +(array[i]);
   }
-  if (!array[i] % 3) {
+  if (array[i] % 3) {
     n++;
   }
   i++;
