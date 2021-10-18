@@ -5,7 +5,7 @@ var array = [16, true, 'MetraBit', NaN, {
 }, 30, NaN, null, false, 'Vue'];
 
 for (var i = 0; i < array.length; i++) {
-	if (isNaN(array[i]) === true) {
+	if (isNaN(array[i])) {
 		array[i] = null;
 	}
 }
@@ -21,7 +21,7 @@ var array = [16, true, 'MetraBit', NaN, {
 
 var i = 0;
 while (i < array.length) {
-	if (isNaN(array[i]) === true) {
+	if (isNaN(array[i])) {
 		array[i] = null;
 	}
 	i++;
@@ -39,7 +39,7 @@ var array = [16, true, 'MetraBit', NaN, {
 var i = 0;
 do {
 	{
-		if (isNaN(array[i]) === true) {
+		if (isNaN(array[i])) {
 			array[i] = null;
 		}
 		i++;
