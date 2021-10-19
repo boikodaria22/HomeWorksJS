@@ -6,7 +6,7 @@ function randomInteger(min = 0, max = 50) {
     arr.push(num);
     return arr;
   } else {
-    return 'Это число уже есть в массиве!'
+    return 'Это число уже есть в массиве!';
   }
 }
 randomInteger();
