@@ -5,4 +5,4 @@ var countFunc = (function() {
     return i;
   };
 })();
-console.log(countFunc());
+countFunc();
