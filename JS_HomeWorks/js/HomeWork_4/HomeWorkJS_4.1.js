@@ -1,10 +1,8 @@
-var countFunc= (function () {
+var countFunc = (function() {
   var i = 0;
-
-  return function () {
-      i++;
-      return i;
+  return function() {
+    i++;
+    return i;
   };
 })();
-
-console.log(countFunc()); 
+console.log(countFunc());
