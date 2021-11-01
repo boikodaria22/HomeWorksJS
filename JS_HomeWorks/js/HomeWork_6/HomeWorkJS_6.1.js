@@ -2,8 +2,8 @@ var obj = {
   firstOperand: undefined,
   secondOperand: undefined,
   setValues: function() {
-    this.firstOperand = +prompt("Enter first value");
-    this.secondOperand = +prompt("Enter second value");
+    this.firstOperand = +prompt("Введите первое число");
+    this.secondOperand = +prompt("Введите второе число");
     this.firstOperand && this.secondOperand ? console.log(`Первое число: ${ this.firstOperand}\nВторое число: ${ this.secondOperand}`) : undefined;
   },
   sumValue: function() {
