@@ -6,9 +6,9 @@ var obj = {
     this.secondOperand = +prompt("Enter second value");
   },
   sumValues: function() {
-    return isNaN(this.firstOperand )&&isNaN(this.secondOperand) ? (this.firstOperand + this.secondOperand) : 'Числа не заданы';
+    return this.firstOperand&& this.secondOperand ? (this.firstOperand + this.secondOperand) : 'Числа не заданы';
   },
   multiplyValues: function() {
-    return isNaN(this.firstOperand )&&isNaN(this.secondOperand) ? (this.firstOperand * this.secondOperand) : 'Числа не заданы';
+    return this.firstOperand && this.secondOperand ? (this.firstOperand * this.secondOperand) : 'Числа не заданы';
   },
 };
