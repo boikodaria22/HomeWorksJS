@@ -6,7 +6,7 @@ var obj = {
     this.secondOperand = +prompt("Enter second value");
   },
   sumValue() {
-    return this.firstOperand&& this.secondOperand ? (this.firstOperand + this.secondOperand) : 'Числа не заданы';
+    return this.firstOperand && this.secondOperand ? (this.firstOperand + this.secondOperand) : 'Числа не заданы';
   },
   multiplyValues() {
     return this.firstOperand && this.secondOperand ? (this.firstOperand * this.secondOperand) : 'Числа не заданы';
