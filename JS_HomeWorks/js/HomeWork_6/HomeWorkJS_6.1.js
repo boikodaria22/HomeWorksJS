@@ -4,7 +4,7 @@ var obj = {
   setValues: function() {
     this.firstOperand = +prompt("Enter first value");
     this.secondOperand = +prompt("Enter second value");
-    if (isNaN(this.firstOperand && this.secondOperand)) {
+    if (isNaN(this.firstOperand && this.secondOperand) || !this.firstOperand || !this.secondOperand) {
       console.log('Ошибка!Введите числа');
       this.setValues()
     } else {
