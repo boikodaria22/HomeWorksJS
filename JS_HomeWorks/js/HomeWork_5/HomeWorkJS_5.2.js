@@ -2,4 +2,6 @@ var addeter = (function(n) {
   return function(num) {
     return num + (n++);
   };
-})(+prompt('Введите n'));
+})(+prompt('Введите число в замыканиии n'));
+
+addeter(num)
