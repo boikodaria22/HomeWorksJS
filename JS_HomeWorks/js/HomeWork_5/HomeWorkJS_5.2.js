@@ -1,7 +1,7 @@
 var addeter = (function(n) {
   return function(num) {
-    return num + (n++);
+    return num + n;
   };
 })(+prompt('Введите число в замыканиии n'));
 
-addeter(num)
+addeter(+prompt('Введите второе число'));
