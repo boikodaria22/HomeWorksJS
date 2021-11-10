@@ -2,7 +2,7 @@ function changeColor(color) {
   console.log('traffic-light ', color);
 }
 
-setTimeout(()=>{
+
 console.log('светофор включен');
 function main(r, y, g, time) {
      let timerId = setInterval(()=>{
@@ -23,9 +23,6 @@ setTimeout(clearInterval(timerId),time*1000)
 })
 }
 main(3, 4, 2, 20) 
-})
-
-
 
 
 
