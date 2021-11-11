@@ -33,6 +33,21 @@ function traficLightsTurnOn(g, y, r, time) {
     setTimeout(() => {
       return clearInterval(interval)
     }, (time - (r + g + y)) * 1000)
+  } else if ((time % (g + r + y) > (g+y))&&(time % (g + r + y) < (g+r+y))){
+    let val = time % (g + r + y) - (g+y);
+    setTimeout(() => {
+      return clearInterval(interval)
+    }, (time - (r + g + y)) * 1000);
+    setTimeout(() => {
+      changeColor('green')
+    }, (time - (g+y+val)) * 1000);
+    setTimeout(() => {
+      changeColor('yellow')
+    }, (time - (y+val)) * 1000);
+    setTimeout(() => {
+      changeColor('red')
+    }, (time - val) * 1000);
+
   } else if (time % (g + r + y) === g) {
     setTimeout(() => {
       return clearInterval(interval)
@@ -63,10 +78,5 @@ function traficLightsTurnOn(g, y, r, time) {
     console.log('Светофор выключен')
   }, time * 1000);
 }
-
-
-
-
-
 
 
