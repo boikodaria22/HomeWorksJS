@@ -1,69 +1,72 @@
-function changeColor(color) {
-  console.log('traffic-light ', color);
+function traficLightsTurnOn(g, y, r, time) {
+  function changeColor(color) {
+    console.log(color);
+  }
+  (function() {
+    setTimeout(() => {
+      console.log('Светофор включен')
+    }, 0);
+    setTimeout(() => {
+      changeColor('green')
+    }, 0);
+    setTimeout(() => {
+      changeColor('yellow')
+    }, g * 1000);
+    setTimeout(() => {
+      changeColor('red')
+    }, (g + y) * 1000);
+  })();
+  let interval = setInterval(() => {
+    var setGreen = setTimeout(() => {
+      changeColor('green')
+    }, 0);
+    var setYellow = setTimeout(() => {
+      changeColor('yellow')
+    }, g * 1000);
+    var setRed = setTimeout(() => {
+      changeColor('red')
+    }, (g + y) * 1000);
+  }, (g + y + r) * 1000);
+
+
+  if (time % (g + r + y) === 0) {
+    setTimeout(() => {
+      return clearInterval(interval)
+    }, (time - (r + g + y)) * 1000)
+  } else if (time % (g + r + y) === g) {
+    setTimeout(() => {
+      return clearInterval(interval)
+    }, (time - (r + g + y)) * 1000);
+    var setGreen = setTimeout(() => {
+      changeColor('green')
+    }, (time - g) * 1000);
+  } else if (time % (g + r + y) <= g) {
+    let value = time % (g + r + y);
+    setTimeout(() => {
+      return clearInterval(interval)
+    }, (time - (r + g + y)) * 1000);
+    var setGreen = setTimeout(() => {
+      changeColor('green')
+    }, (time - value) * 1000);
+  } else if (time % (g + r + y) === (g + y)) {
+    setTimeout(() => {
+      return clearInterval(interval)
+    }, (time - (r + g + y)) * 1000);
+    var setGreen = setTimeout(() => {
+      changeColor('green')
+    }, (time - (g + y)) * 1000);
+    var setGreen = setTimeout(() => {
+      changeColor('yellow')
+    }, (time - y) * 1000);
+  }
+  setTimeout(() => {
+    console.log('Светофор выключен')
+  }, time * 1000);
 }
 
 
-console.log('светофор включен');
-function main(r, y, g, time) {
-     let timerId = setInterval(()=>{
-     let timeoutId = setTimeout(() => {
-    changeColor('red');setTimeout(() => {
-      changeColor('yellow');setTimeout(() => {
-
-        changeColor('green');setTimeout(() => {
-          setTimeout(() => {
-            main(r, y, g, time);
-          },1000);
-        }, g * 1000);
-      }, y * 1000);
-    }, r * 1000);
-  });
-setTimeout(()=> {clearTimeout(timeoutId)},time*1000)
-setTimeout(clearInterval(timerId),time*1000)
-})
-}
-main(3, 4, 2, 20) 
 
 
 
 
 
-
-
-
-
-
-
-/*
-function changeColor(color) {
-  console.log('traffic-light ', color);
-}
-
-function timer(colorTime){
- for (let i = 1; i <= colorTime; i++) { 
-  setTimeout(function() {
-      console.log(i)
-    }, 1000 * i)
-    }
-}
-function main(r, y, g, time) {
-  let timerId = setInterval((time)=>{
-
-  console.log('Светофор включен');
-  let timeoutId = setTimeout(() => {
-   timer(r)
-    changeColor('red');setTimeout(() => {
-      timer(y)
-      changeColor('yellow');setTimeout(() => {
-timer(g)
-        changeColor('green');setTimeout(() => {
-          console.log('Светофор выключен');setTimeout(() => {
-            main;setTimeout(() => clearTimeout(timeoutId))
-          },1000);
-        }, g * 1000);
-      }, y * 1000);
-    }, r * 1000);
-  });
-clearInterval(timerId)
-},time*1000)
-}
