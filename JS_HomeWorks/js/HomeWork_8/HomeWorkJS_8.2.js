@@ -17,13 +17,13 @@ function traficLightsTurnOn(g, y, r, time) {
     }, (g + y) * 1000);
   })();
   let interval = setInterval(() => {
-    var setGreen = setTimeout(() => {
+    setTimeout(() => {
       changeColor('green')
     }, 0);
-    var setYellow = setTimeout(() => {
+    setTimeout(() => {
       changeColor('yellow')
     }, g * 1000);
-    var setRed = setTimeout(() => {
+    setTimeout(() => {
       changeColor('red')
     }, (g + y) * 1000);
   }, (g + y + r) * 1000);
@@ -37,7 +37,7 @@ function traficLightsTurnOn(g, y, r, time) {
     setTimeout(() => {
       return clearInterval(interval)
     }, (time - (r + g + y)) * 1000);
-    var setGreen = setTimeout(() => {
+    setTimeout(() => {
       changeColor('green')
     }, (time - g) * 1000);
   } else if (time % (g + r + y) <= g) {
@@ -45,17 +45,17 @@ function traficLightsTurnOn(g, y, r, time) {
     setTimeout(() => {
       return clearInterval(interval)
     }, (time - (r + g + y)) * 1000);
-    var setGreen = setTimeout(() => {
+    setTimeout(() => {
       changeColor('green')
     }, (time - value) * 1000);
   } else if (time % (g + r + y) === (g + y)) {
     setTimeout(() => {
       return clearInterval(interval)
     }, (time - (r + g + y)) * 1000);
-    var setGreen = setTimeout(() => {
+    setTimeout(() => {
       changeColor('green')
     }, (time - (g + y)) * 1000);
-    var setGreen = setTimeout(() => {
+    setTimeout(() => {
       changeColor('yellow')
     }, (time - y) * 1000);
   }
