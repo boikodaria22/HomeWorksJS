@@ -40,7 +40,7 @@ const rangesArray = [
       let preresArr = Array(uniqueDates.length);
 
       for (let i = 0; i < preresArr.length; i++) {
-        preresArr[i] = `${uniqueDates[i]}:`.padEnd(24,'*');
+        preresArr[i] = ''.padEnd(24,'*');
       }
       
       return preresArr;
