@@ -17,9 +17,9 @@ function change(array, i) {
     })
 };
 for (let i = 0; i < buttons.length; i++) {
-    buttons[i].addEventListener('click', (event) => {
+    buttons[i].onclick = (event) => {
         change([buttons, target], i)
-    })
+    }
 };
 /* ==================== Change quantity ======================*/
 const price = 1493;
