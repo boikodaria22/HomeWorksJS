@@ -104,10 +104,6 @@ label {
   margin-bottom: 30px;
 }
 
-.product-image:hover {
-  transform: scale(1.03);
-}
-
 #tabs {
   margin: 0;
 }
@@ -136,10 +132,6 @@ label {
 .tab_content.active {
   display: block;
 }
-
-
-
-
 
 .quantity {
   display: flex;
