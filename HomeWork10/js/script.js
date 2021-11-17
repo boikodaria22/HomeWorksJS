@@ -1,5 +1,5 @@
 const title = 'Apple iPhone 12 Pro 256GB'
-const productName = document.querySelectorAll('.product-title')
+const productName = document.getElementsByClassName('product-title')
 for (let i = 0; i < productName.length; i++) {
     productName[i].textContent = `${title}`
 }
@@ -25,9 +25,9 @@ for (let i = 0; i < buttons.length; i++) {
 const price = 1493;
 const plus = document.querySelector('.max') 
 const minus = document.querySelector('.min') 
-let input = document.querySelector('.quantity-input')
-let quantity = document.querySelector('#quantity') 
-let priceSum = document.querySelector('#price-sum')
+let input = document.querySelector('.quantity-input') 
+let quantity = document.querySelector('#quantity')
+let priceSum = document.querySelector('#price-sum') 
 let infoQuantity = document.querySelector('.product-quantity')
 let infoAmount = document.querySelector('.amount-quantity')
 priceSum.textContent = price
@@ -50,6 +50,7 @@ plus.onclick = (event) =>{
     infoQuantity.textContent = `${quantity.value}`
     infoAmount.textContent = `${total}`
   }
+
 
 /* ==================== Contacts info ======================*/
 contacts.oninput = function(event) {
