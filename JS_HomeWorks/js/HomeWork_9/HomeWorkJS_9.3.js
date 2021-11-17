@@ -7,7 +7,7 @@ function strMoreThen5(arrStr) {
     if (value.length > 5) {
       accum.push(value)
     }
-    return acum
+    return accum
   }, [])
   return str;
 }
