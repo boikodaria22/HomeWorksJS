@@ -8,6 +8,6 @@ function checkArrayFunc(...arguments) {
   var merged = [].concat.apply([], arr);
   merged.push('End');
   merged.unshift('Start');
-  console.log(merged.reverse());
+  return (merged.reverse());
 }
 checkArrayFunc(null, 123, 'JS', ['Nastya', 'Dima', 'Max', 'Masha'], undefined, {}, true, ['Sasha', 'Denis', 'Marina']);
