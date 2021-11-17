@@ -35,20 +35,22 @@ infoQuantity.textContent = 0
 infoAmount.textContent = 0
 total = 0
 input = 1
-plus.addEventListener('click', function() {
+plus.onclick = (event) =>{
     input++;
     quantity.value = input;
     total = priceSum.textContent = price * quantity.value
     infoQuantity.textContent = `${quantity.value}`
     infoAmount.textContent = `${total}`
-});
-minus.addEventListener('click', function() {
+  }
+
+  minus.onclick = (event) =>{
     input > 0 ? input-- : 0;
     quantity.value = input;
     total = priceSum.textContent = price * quantity.value
     infoQuantity.textContent = `${quantity.value}`
     infoAmount.textContent = `${total}`
-});
+  }
+
 /* ==================== Contacts info ======================*/
 contacts.oninput = function(event) {
     const infoName = document.getElementById('info_name')
