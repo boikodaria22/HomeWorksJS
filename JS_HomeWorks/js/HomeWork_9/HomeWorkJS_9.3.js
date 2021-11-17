@@ -3,11 +3,11 @@ function strMoreThen5(arrStr) {
 }
 
 function strMoreThen5(arrStr) {
-  const str = arrStr.reduce(function(accum, value) {
+  return str = arrStr.reduce(function(accum, value) {
     if (value.length > 5) {
       accum.push(value)
     }
     return accum
   }, [])
-  return str;
+  
 }
