@@ -23,11 +23,11 @@ for (let i = 0; i < buttons.length; i++) {
 };
 /* ==================== Change quantity ======================*/
 const price = 1493;
-const plus = document.querySelector('.max') //кнопка плюс
-const minus = document.querySelector('.min') //кнопка -
-let input = document.querySelector('.quantity-input') //input field
-let quantity = document.querySelector('#quantity') //input field
-let priceSum = document.querySelector('#price-sum') //input fiel
+const plus = document.querySelector('.max') 
+const minus = document.querySelector('.min') 
+let input = document.querySelector('.quantity-input')
+let quantity = document.querySelector('#quantity') 
+let priceSum = document.querySelector('#price-sum')
 let infoQuantity = document.querySelector('.product-quantity')
 let infoAmount = document.querySelector('.amount-quantity')
 priceSum.textContent = price
