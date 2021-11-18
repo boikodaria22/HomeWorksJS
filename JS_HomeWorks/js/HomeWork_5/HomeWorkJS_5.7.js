@@ -1,7 +1,7 @@
 var user = {
   firstName: 'Daria',
   lastName: 'Boiko',
-  birthday: new Date(1997, 08, 22),
+  birthday: new Date(1997, 8, 22),
   get fullName() {
     return `${this.firstName} ${this.lastName}`;
   },
@@ -10,10 +10,11 @@ var user = {
   },
   get age() {
     var year = new Date().getFullYear();
-    return (+year) - (+this.birthday.substr(-4, 4));
+    return (+year) - (+this.birthday.getFullYear());
   },
   set age(newAge) {
-    var year = new Date().getFullYear();
-    this.birthday = this.birthday.substring(0, 6).concat(+year - (+newAge));
+    var year = new Date().getFullYear() - newAge;
+    var month =  this.birthday.getMonth() -1;
+    this.birthday.setFullYear(year,month)
   }
-};
+}
