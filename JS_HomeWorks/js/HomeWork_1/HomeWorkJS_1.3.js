@@ -34,7 +34,7 @@ function myFuncForTypes(array) {
   console.log(`String: ${str}`)
   console.log(`Number: ${num}`)
   console.log(`Boolean: ${bool}`)
-  console.log(`Null: ${null}`)
+  console.log(`Null: ${nullType}`)
   console.log(`Object: ${obj}`)
 
 }
