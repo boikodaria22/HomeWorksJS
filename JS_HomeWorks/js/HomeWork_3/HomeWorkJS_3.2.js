@@ -6,6 +6,6 @@ function checkLengthArray(arrNum, arrStr) {
 
   arrNum.splice(arrNum.length / 2, 0, arrStr);
   var merged = [].concat.apply([], arrNum);
-  console.log(merged.slice(0, merged.length / 2));
+  return(merged.slice(0, merged.length / 2));
 }
 checkLengthArray([73, 4, 11, 234, 58, 134], ['js', 'css', 'jq', 'html', 'vue', 'bootstrap']);
