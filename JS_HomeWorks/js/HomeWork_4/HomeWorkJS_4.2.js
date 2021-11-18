@@ -1,7 +1,7 @@
 var randomInteger = (function() {
   var arr = [];
   return function(min = 0, max = 50) {
-    var num = Math.round(min - 0.5 + Math.random() * (max - min + 1));
+    var num = Math.round(Math.random() * max);
     if (!arr.includes(num)) {
       arr.push(num);
       return arr;
