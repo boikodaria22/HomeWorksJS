@@ -2,8 +2,7 @@
  function frazeWithoutWord(fraze, word) {
    if (fraze.includes(word)) {
      var indexWord = fraze.indexOf(word);
-     var newString = fraze.substr(0, indexWord) + fraze.substr(indexWord + (word.length + 1));
-     return newString;
+     return fraze.substr(0, indexWord) + fraze.substr(indexWord + (word.length + 1));
    } else {
      return `${fraze}: ${word}`;
    }
@@ -13,8 +12,7 @@
  function frazeWithoutWord(fraze, word) {
    if (fraze.includes(word)) {
      var indexWord = fraze.indexOf(word);
-     var newString = fraze.substring(0, indexWord) + fraze.substring(indexWord + (word.length + 1));
-     return newString;
+     return= fraze.substring(0, indexWord) + fraze.substring(indexWord + (word.length + 1));
    } else {
      return `${fraze}: ${word}`;
    }
@@ -24,10 +22,9 @@
  function frazeWithoutWord(fraze, word) {
    if (fraze.includes(word)) {
      var indexWord = fraze.indexOf(word);
-     var newString = fraze.slice(0, indexWord) + fraze.slice(indexWord + (word.length + 1));
-     return newString;
+     return fraze.slice(0, indexWord) + fraze.slice(indexWord + (word.length + 1));
    } else {
-     return return `${fraze}: ${word}`;
+     return `${fraze}: ${word}`;
    }
  }
  frazeWithoutWord('mama mila ramu', 'mila')
