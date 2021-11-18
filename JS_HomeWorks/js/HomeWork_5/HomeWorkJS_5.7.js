@@ -1,13 +1,12 @@
 var user = {
   firstName: 'Daria',
   lastName: 'Boiko',
-  birthday: '08/22/1997',
+  birthday: new Date(1997, 08, 22),
   get fullName() {
     return `${this.firstName} ${this.lastName}`;
   },
   set fullName(newFullName) {
-    this.firstName = newFullName.substring(0, newFullName.indexOf(' '));
-    this.lastName = newFullName.substring(newFullName.indexOf(' '));
+   [this.firstName, this.lastName] = newfullName.split(" ")
   },
   get age() {
     var year = new Date().getFullYear();
