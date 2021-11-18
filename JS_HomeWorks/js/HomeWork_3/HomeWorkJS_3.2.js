@@ -1,11 +1,9 @@
 function checkLengthArray(arrNum, arrStr) {
   if (arrNum.length !== arrStr.length) {
     return 'Массивы имеют разную длину';
-  } else {
-    var sortNum = arrNum.sort((a, b) => {
-      return a < b ? -1 : 1
-    })
   }
+    var sortNum = arrNum.sort((a, b) => a < b ? -1 : 1)
+
   arrNum.splice(arrNum.length / 2, 0, arrStr);
   var merged = [].concat.apply([], arrNum);
   console.log(merged.slice(0, merged.length / 2));
