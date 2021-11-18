@@ -1,6 +1,8 @@
-var checkPassword = (function(password = '12345678') {
+var perol = '12345678'
+
+var checkPassword = ((function(password) {
   return function(str) {
-    return str === password ? Boolean(true) : Boolean(false);
+    return str === password ? true: false;
   };
-})();
+})(parol));
 checkPassword('12345678');
