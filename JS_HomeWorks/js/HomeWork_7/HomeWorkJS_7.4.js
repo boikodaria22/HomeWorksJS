@@ -4,6 +4,8 @@ ProductCreator.prototype.showProductCreatorInstanceCounter = function() {
   ProductCreator.prototype.instanceCounter++;
   if (this instanceof ProductCreator) {
     this.id = ProductCreator.prototype.instanceCounter;
-    return (this.id)
+   console.log(`ID coзданого объекта: ${this.id }`)
+
   }
+return (`Число созданных объектов : ${ProductCreator.prototype.instanceCounter}`) ;
 };
