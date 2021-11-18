@@ -1,7 +1,2 @@
-var getCounter = (function() {
-  var counter = 10;
-  return function() {
-    return counter ? --counter : 'Отсчет окончен';
-  };
-})();
+var getCounter = ((counter) => () => counter ? --counter : 'Отсчет окончен')(counter = 10);
 getCounter();
