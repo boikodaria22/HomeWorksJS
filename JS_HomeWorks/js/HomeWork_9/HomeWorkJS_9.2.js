@@ -1,11 +1,11 @@
 function countNumbers(array) {
-  const num = []
-  const sum = array.sort((a, b) => b - a).reduce(function(accum, value) {
+  let num = 0
+  const sum = array.reduce(function(accum, value) {
     if (accum <= 20) {
-      num.push(value)
+      num ++
       accum += value
     }
     return accum
   }, 0)
-  return sum > 20 ? `Сумма ${num.length} элементов >= 20` : `Сумма ${num.length} < 20`
+  return sum > 20 ? `Сумма ${num} элементов >= 20` : `Сумма ${num} < 20`
 }
