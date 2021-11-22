@@ -1,4 +1,3 @@
-# HomeWorksJS
-10 homework
-pages:
-https://github.com/boikodaria22/ProductPage
+10 homework:https://github.com/boikodaria22/ProductPage
+pages:https://boikodaria22.github.io/ProductPage/
+
