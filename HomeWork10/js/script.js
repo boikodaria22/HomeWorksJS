@@ -55,14 +55,13 @@ plus.onclick = (event) =>{
   }
 
 /* ==================== Contacts info ======================*/
-let info = Array.from([...document.querySelectorAll('[id^="info_"]')].map(elm => elm.id));
-let inputInfo =Array.from( [...document.querySelectorAll('[id^="input"]')].map(elm => elm.id));
-let indicatorsinputFormContacts = inputInfo.map(elm =>document.getElementById(elm))
-let indicatorsContactInfo =  info.map(elm =>document.getElementById(elm))
+let info = Array.from([...document.querySelectorAll('[id^="info_"]')].map(elm => elm.id)).map(elm =>document.getElementById(elm));
+let inputInfo =Array.from( [...document.querySelectorAll('[id^="input"]')].map(elm => elm.id)).map(elm =>document.getElementById(elm));
 
-for( let i=0; i<indicatorsinputFormContacts.length;i++){
-    indicatorsinputFormContacts[i].oninput= function(event){
-        indicatorsContactInfo[i].textContent = indicatorsinputFormContacts[i].value
+for( let i=0; i<inputInfo.length;i++){
+    inputInfo[i].oninput= function(event){
+        info[i].textContent = inputInfo[i].value
     }
 }
+
 
