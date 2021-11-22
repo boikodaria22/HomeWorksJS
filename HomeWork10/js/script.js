@@ -70,7 +70,7 @@ function getEl(arr){
         }
     }
 }
-getEl(contactInfo,inputFormContacts)
+getEl(contactInfo)
 getEl(inputFormContacts)
 for( let i=0; i<indicatorsinputFormContacts.length;i++){
     indicatorsinputFormContacts[i].oninput= function(event){
