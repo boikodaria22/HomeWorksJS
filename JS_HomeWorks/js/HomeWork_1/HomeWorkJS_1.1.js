@@ -4,7 +4,7 @@ var array = [16, true, 'MetraBit', NaN, {
   hobby: 'JS'
 }, 30, NaN, null, false, 'Vue'];
 for (var i = 0; i < array.length; i++) {
-  if (isNaN(array[i])) {
+  if (isNaN(array[i])) {//опустила проверку с 0
     array[i] = null;
   }
 }
