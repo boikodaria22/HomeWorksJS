@@ -1,12 +1,12 @@
 const title = 'Apple iPhone 12 Pro 256GB'
-const productName = document.getElementsByClassName('product-title')
+const productName = Array.from(document.getElementsByClassName('product-title'))
 for (let i = 0; i < productName.length; i++) {
     productName[i].textContent = `${title}`
 }
 /* ==================== Change content ======================*/
-const tabs = document.querySelector('#tabs')
-const buttons = tabs.querySelectorAll('.tabs_button')
-const target = document.querySelectorAll('.tab_content')
+const tabs = document.getElementById('tabs')
+const buttons = Array.from(tabs.getElementsByClassName('tabs_button'))
+const target = Array.from(document.getElementsByClassName('tab_content'))
 
 function change(array, i) {
     array.forEach(element => {
@@ -23,13 +23,16 @@ for (let i = 0; i < buttons.length; i++) {
 };
 /* ==================== Change quantity ======================*/
 const price = 1493;
-const plus = document.querySelector('.max') 
-const minus = document.querySelector('.min') 
-let input = document.querySelector('.quantity-input') 
-let quantity = document.querySelector('#quantity')
-let priceSum = document.querySelector('#price-sum') 
-let infoQuantity = document.querySelector('.product-quantity')
-let infoAmount = document.querySelector('.amount-quantity')
+const changeQuantity  = Array.from(document.body.getElementsByClassName('quantity-element'));
+ function findElement(id){
+     return changeQuantity.find((item) => item.id === id)
+ }
+const plus = findElement('max') 
+const minus = findElement('min') 
+let quantity = findElement('quantity')
+let priceSum = findElement('price-sum') 
+let infoQuantity = findElement('product-quantity')
+let infoAmount =findElement('amount-quantity')
 priceSum.textContent = price
 infoQuantity.textContent = 0
 infoAmount.textContent = 0
@@ -51,17 +54,27 @@ plus.onclick = (event) =>{
     infoAmount.textContent = `${total}`
   }
 
-
 /* ==================== Contacts info ======================*/
-contacts.oninput = function(event) {
-    const infoName = document.getElementById('info_name')
-    const infoSurname = document.getElementById('info_surname')
-    const infoEmail = document.getElementById('info_email')
-    const infoPhone = document.getElementById('info_phone')
-    const infoAddress = document.getElementById('info_address')
-    infoName.textContent = `${document.getElementById('inputName').value}`
-    infoSurname.textContent = `${document.getElementById('inputSurname').value}`
-    infoEmail.textContent = `${document.getElementById('inputEmail').value}`
-    infoPhone.textContent = `${document.getElementById('inputPhone').value}`
-    infoAddress.textContent = `${document.getElementById('inputAddress').value}`
+const contactInfo = ['info_name','info_surname','info_email','info_phone','info_address']
+const inputFormContacts = ['inputName','inputSurname','inputEmail','inputPhone','inputAddress']
+let indicatorsinputFormContacts = []
+let indicatorsContactInfo = []
+function getEl(arr){
+    for(let i=0;i<arr.length;i++){
+        let x = document.getElementById(arr[i])
+        if(arr === contactInfo){
+        indicatorsContactInfo.push(x)
+        }
+        else if(arr === inputFormContacts){
+            indicatorsinputFormContacts.push(x) 
+        }
+    }
+}
+getEl(contactInfo,inputFormContacts)
+getEl(inputFormContacts)
+for( let i=0; i<indicatorsinputFormContacts.length;i++){
+    indicatorsinputFormContacts[i].oninput= function(event){
+        indicatorsContactInfo[i].textContent = indicatorsinputFormContacts[i].value
+    }
+}
 }
