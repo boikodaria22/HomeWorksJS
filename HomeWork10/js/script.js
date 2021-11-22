@@ -38,23 +38,26 @@ infoQuantity.textContent = 0
 infoAmount.textContent = 0
 total = 0
 input = 1
-plus.onclick = (event) =>{
-    input++;
+
+function countFunc(){
     quantity.value = input;
     total = priceSum.textContent = price * quantity.value
     infoQuantity.textContent = `${quantity.value}`
     infoAmount.textContent = `${total}`
+  }
+
+plus.onclick = (event) =>{
+    input++;
+    countFunc()
   }
 
   minus.onclick = (event) =>{
     input > 0 ? input-- : 0;
-    quantity.value = input;
-    total = priceSum.textContent = price * quantity.value
-    infoQuantity.textContent = `${quantity.value}`
-    infoAmount.textContent = `${total}`
+    countFunc()
   }
 
 /* ==================== Contacts info ======================*/
+
 let info = Array.from([...document.querySelectorAll('[id^="info_"]')].map(elm => elm.id)).map(elm =>document.getElementById(elm));
 let inputInfo =Array.from( [...document.querySelectorAll('[id^="input"]')].map(elm => elm.id)).map(elm =>document.getElementById(elm));
 
@@ -63,5 +66,6 @@ for( let i=0; i<inputInfo.length;i++){
         info[i].textContent = inputInfo[i].value
     }
 }
+
 
 
