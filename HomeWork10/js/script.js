@@ -31,8 +31,8 @@ let priceSum = arrayFromCountPrice[3]
 let infoQuantity = arrayFromCountPrice[4]
 let infoAmount = arrayFromCountPrice[5]
 priceSum.textContent = price
-infoQuantity.textContent = 0
-infoAmount.textContent = 0
+infoQuantity.textContent = 1
+infoAmount.textContent = 1493
 total = 0
 input = 1
 
