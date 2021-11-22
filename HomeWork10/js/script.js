@@ -55,26 +55,14 @@ plus.onclick = (event) =>{
   }
 
 /* ==================== Contacts info ======================*/
-const contactInfo = ['info_name','info_surname','info_email','info_phone','info_address']
-const inputFormContacts = ['inputName','inputSurname','inputEmail','inputPhone','inputAddress']
-let indicatorsinputFormContacts = []
-let indicatorsContactInfo = []
-function getEl(arr){
-    for(let i=0;i<arr.length;i++){
-        let x = document.getElementById(arr[i])
-        if(arr === contactInfo){
-        indicatorsContactInfo.push(x)
-        }
-        else if(arr === inputFormContacts){
-            indicatorsinputFormContacts.push(x) 
-        }
-    }
-}
-getEl(contactInfo)
-getEl(inputFormContacts)
+let info = Array.from([...document.querySelectorAll('[id^="info_"]')].map(elm => elm.id));
+let inputInfo =Array.from( [...document.querySelectorAll('[id^="input"]')].map(elm => elm.id));
+let indicatorsinputFormContacts = inputInfo.map(elm =>document.getElementById(elm))
+let indicatorsContactInfo =  info.map(elm =>document.getElementById(elm))
+
 for( let i=0; i<indicatorsinputFormContacts.length;i++){
     indicatorsinputFormContacts[i].oninput= function(event){
         indicatorsContactInfo[i].textContent = indicatorsinputFormContacts[i].value
     }
 }
-}
+
