@@ -29,7 +29,7 @@ function studentsPassExam(studentsMarks) {
 }
 
 function sumOfMarks(studentsMarks) {
-  return studentsMarks.reduce((accumu, value) => accum + value.mark, 0)
+  return studentsMarks.reduce((accum, value) => accum + value.mark, 0)
 }
 
 function promotionStudentsPassExam(studentsMarks) {
