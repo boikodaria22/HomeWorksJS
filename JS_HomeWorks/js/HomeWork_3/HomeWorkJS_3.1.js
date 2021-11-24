@@ -1,4 +1,4 @@
-function checkArrayFunc(...arguments) {
+function checkArrayFunc() {
   var arr = [];
   for (var i = 0; i <= arguments.length; i++) {
     if (Array.isArray(arguments[i])) {
