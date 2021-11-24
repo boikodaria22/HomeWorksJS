@@ -4,7 +4,7 @@ function rangeFunc(start, end){
     } else if(start === end){
         return end;
     } else {
-        return ([start].concat(getRange(++start, end))).join(', ');
+        return ([start].concat(rangeFunc(++start, end))).join(', ');
     } 
 }
 
