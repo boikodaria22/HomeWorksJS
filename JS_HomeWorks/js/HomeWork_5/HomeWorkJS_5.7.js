@@ -6,7 +6,7 @@ var user = {
     return `${this.firstName} ${this.lastName}`;
   },
   set fullName(newFullName) {
-   [this.firstName, this.lastName] = newfullName.split(" ")
+   [this.firstName, this.lastName] = newFullName.split(" ")
   },
   get age() {
     var year = new Date().getFullYear();
