@@ -1,6 +1,7 @@
 function ProductCreator() {
+ProductCreator.prototype.instanceCounter = ProductCreator.prototype.instanceCounter ++ 
+this.id =ProductCreator.prototype.instanceCounter 
 }  
-let count = 0
-ProductCreator.prototype.instanceCounter = ++count
-ProductCreator.prototype.id = `Имеет id:${ProductCreator.prototype.instanceCounter}`
-ProductCreator.prototype.showProductCreatorInstanceCounter =(()=>count)
+
+ProductCreator.prototype.instanceCounter = 0
+ProductCreator.prototype.showProductCreatorInstanceCounter =(()=>ProductCreator.prototype.instanceCounter )
