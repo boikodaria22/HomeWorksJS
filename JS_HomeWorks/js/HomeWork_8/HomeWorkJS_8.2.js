@@ -1,4 +1,41 @@
-function traficLightsTurnOn(g, y, r, time) {
+function traficLight(green, yellow, red, time) {
+  const times = green + yellow + red;
+  let intervalGreen;
+  let intervalYellow;
+  let intervalRed;
+  setTimeout(() => console.log('Светофор включен'))
+  setTimeout(() => {
+    console.log('green')
+    intervalGreen = setInterval(() => {
+      console.log('green')
+    }, times * 1000)
+  }, 0)
+  setTimeout(() => {
+    console.log('yellow')
+    intervalYellow = setInterval(() => {
+      console.log('yellow')
+    }, times * 1000)
+  }, green * 1000)
+  setTimeout(() => {
+    console.log('red');
+    intervalRed = setInterval(() => {
+      console.log('red')
+    }, times * 1000)
+  }, (green + yellow) * 1000)
+  let interval = setInterval(() => {
+    clearInterval(intervalGreen);
+    clearInterval(intervalYellow);
+    clearInterval(intervalRed);
+    console.log('Светофор выключен');
+    clearInterval(interval);
+  }, time * 1000)
+}
+traficLight(2, 2, 2, 8)
+
+
+
+
+/*function traficLightsTurnOn(g, y, r, time) {
   function changeColor(color) {
     console.log(color);
   }
@@ -86,3 +123,4 @@ function traficLightsTurnOn(g, y, r, time) {
     console.log('Светофор выключен')
   }, time * 1000);
 }
+*/
