@@ -77,5 +77,5 @@ function booking(rangesArray) {
   }
 }
   
-
+booking(rangesArray) 
 
