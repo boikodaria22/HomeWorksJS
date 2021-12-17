@@ -4,8 +4,8 @@ const phone = {
   discount: null,
   quantity: 1,
   weight: null,
-  arr: 1
 }
+
 const laptop = {
   name: 'Mac',
   price: 8000,
