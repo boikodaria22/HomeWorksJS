@@ -1,22 +1,30 @@
-function checkObjectKeys(obj1, obj2) {
-  const firstObjectKey = Object.keys(obj1)
-  const secondObjectKey = Object.keys(obj2)
-  for (let i = 0; i < firstObjectKey.length; i++) {
-    if (firstObjectKey[i] !== secondObjectKey[i])
-      return false
-  }
-  return true
+const phone = {
+  name: 'IPhone X',
+  price: 2000,
+  discount: null,
+  quantity: 1,
+  weight: null,
+  arr: 1
+}
+const laptop = {
+  name: 'Mac',
+  price: 8000,
+  discount: null,
+  quantity: 1,
+  weight: null,
+  height: null,
+  diagonal: 55
 }
 
-
-const obj1 = {
-  name: 'Dasha',
-  age: 12,
-  hobby: 'JS'
+function getUniqueKeysFromObjects(phone, laptop) {
+  const {...newObjPhone } = phone, 
+    {...newObjLaptop } = laptop,
+    arrayKeyPhone = Object.keys(newObjPhone),
+    arrayKeyLaptop = Object.keys(newObjLaptop),
+    uniqueKeysInLaptop = arrayKeyPhone.filter(el => arrayKeyLaptop.indexOf(el) < 0),
+    uniqueKeysInPhone = arrayKeyLaptop.filter(el => arrayKeyPhone.indexOf(el) < 0),
+    uniqueKeysInObjects = uniqueKeysInLaptop.concat(uniqueKeysInPhone)
+  if (!uniqueKeysInObjects.length) return true
+  return uniqueKeysInObjects
 }
-const obj2 = {
-  name: 'Max',
-  age: 22,
-  hobby: 'JS'
-}
-checkObjectKeys(obj1, obj2)
+getUniqueKeysFromObjects(phone, laptop)
