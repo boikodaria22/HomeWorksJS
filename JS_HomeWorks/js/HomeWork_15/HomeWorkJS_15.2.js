@@ -21,8 +21,8 @@ function getUniqueKeysFromObjects(phone, laptop) {
     {...newObjLaptop } = laptop,
     arrayKeyPhone = Object.keys(newObjPhone),
     arrayKeyLaptop = Object.keys(newObjLaptop),
-    uniqueKeysInLaptop = arrayKeyPhone.filter(el => arrayKeyLaptop.indexOf(el) < 0),
-    uniqueKeysInPhone = arrayKeyLaptop.filter(el => arrayKeyPhone.indexOf(el) < 0),
+    uniqueKeysInLaptop = arrayKeyPhone.filter(el => arrayKeyLaptop.indexOf(el) === -1),
+    uniqueKeysInPhone = arrayKeyLaptop.filter(el => arrayKeyPhone.indexOf(el) === -1),
     uniqueKeysInObjects = uniqueKeysInLaptop.concat(uniqueKeysInPhone)
   if (!uniqueKeysInObjects.length) return true
   return uniqueKeysInObjects
