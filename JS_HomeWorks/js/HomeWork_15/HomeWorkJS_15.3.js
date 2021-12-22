@@ -9,7 +9,7 @@ const laptop = {
 }
 
 function getObjFirstSecondRestValues(obj) {
-  const copyObj = {...obj},
+  const {...copyObj} = obj,
     arrayValues = Object.values(copyObj)
   if (!arrayValues.length) return 'Object is empty'
   let [firstValue, secondValue, ...restValues] = arrayValues
