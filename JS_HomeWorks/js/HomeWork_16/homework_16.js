@@ -2,12 +2,12 @@
 class Product {
   constructor(productId, productName, productPrice, productQuantity, productBrand, productDiscount, productSeller) {
     this.productId = productId,
-      this.productName = productName,
-      this.productPrice = productPrice,
-      this.productQuantity = productQuantity,
-      this.productBrand = productBrand,
-      this.productDiscount = productDiscount,
-      this.productSeller = productSeller
+    this.productName = productName,
+    this.productPrice = productPrice,
+    this.productQuantity = productQuantity,
+    this.productBrand = productBrand,
+    this.productDiscount = productDiscount,
+    this.productSeller = productSeller
   }
   changePrice(newPrice) {
     if (newPrice < 0)
@@ -65,8 +65,8 @@ class Сustomer extends User {
   constructor(name, surname, email, password, birthday, cardNumber, wishList = [], cart = []) {
     super(name, surname, email, password, birthday)
     this.cardNumber = cardNumber,
-      this.wishList = wishList,
-      this.cart = cart
+    this.wishList = wishList,
+    this.cart = cart
   }
   addProductToWishList(objProduct) {
     if (!(objProduct instanceof Product)) return 'This is not a prtoduct'
