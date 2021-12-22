@@ -17,8 +17,8 @@ const laptop = {
 }
 
 function getUniqueKeysFromObjects(phone, laptop) {
-  const newObjPhone = {...phone}, 
-    newObjLaptop  = {...laptop},
+  const {...newObjPhone} = phone, 
+        {...newObjLaptop}  = laptop,
     arrayKeyPhone = Object.keys(newObjPhone),
     arrayKeyLaptop = Object.keys(newObjLaptop),
     uniqueKeysInLaptop = arrayKeyPhone.filter(el => arrayKeyLaptop.indexOf(el) === -1),
