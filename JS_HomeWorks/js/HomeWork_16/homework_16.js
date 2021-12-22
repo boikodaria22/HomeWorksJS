@@ -85,9 +85,9 @@ class Seller extends User {
   constructor(name, surname, email, password, birthday, shopName, phoneNumber, workingHours, productList = []) {
     super(name, surname, email, password, birthday)
     this.shopName = shopName,
-      this.phoneNumber = phoneNumber,
-      this.workingHours = workingHours,
-      this.productList = productList
+    this.phoneNumber = phoneNumber,
+    this.workingHours = workingHours,
+    this.productList = productList
   }
   addProductToProductList(productId, productName, productPrice, productQuantity, productBrand, productDiscount, productSeller) {
     let newProductList = new Product(productId, productName, productPrice, productQuantity, productBrand, productDiscount, productSeller)
