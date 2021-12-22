@@ -80,7 +80,7 @@ class Сustomer extends User {
   }
 }
 
-//4
+////Задание 4
 class Seller extends User {
   constructor(name, surname, email, password, birthday, shopName, phoneNumber, workingHours, productList = []) {
     super(name, surname, email, password, birthday)
