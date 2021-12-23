@@ -23,8 +23,8 @@ class Product {
     if (productPrice > 0)
       this.productPrice = productPrice + (productPrice * (this.productDiscount / 100))
   }
-  static addNewMethod(strMethod, func) {
-    Product.prototype[strMethod] = func
+  static addNewMethod(methodName, methodNewFunction) {
+    Product.prototype[methodName] = methodNewFunction
   }
 }
 
@@ -54,8 +54,7 @@ class User {
   }
   calculateAge() {
     if (this.birthday === '') return `This user hasn't any information about birthday`
-    const bday = (new Date(this.birthday)).getFullYear()
-    return (new Date().getFullYear() - bday)
+    return (new Date().getFullYear() - (new Date(this.birthday)).getFullYear())
   }
 }
 
@@ -68,19 +67,19 @@ class Сustomer extends User {
     this.wishList = wishList,
     this.cart = cart
   }
-  addProductToWishList(objProduct) {
-    if (!(objProduct instanceof Product)) return 'This is not a prtoduct'
-    this.wishList.push(objProduct)
+  addProductToWishList(selectedProduct) {
+    if (!(selectedProduct instanceof Product)) return 'This is not a product'
+    this.wishList.push(selectedProduct)
     return 'This product has been added to the wish list'
   }
-  addProductToСart(objProduct) {
-    if (!(objProduct instanceof Product)) return 'This is not a prtoduct'
-    this.cart.push(objProduct)
+  addProductToСart(selectedProduct) {
+    if (!(selectedProduct instanceof Product)) return 'This is not a product'
+    this.cart.push(selectedProduct)
     return 'This product has been added to the your сart'
   }
 }
 
-////Задание 4
+//4
 class Seller extends User {
   constructor(name, surname, email, password, birthday, shopName, phoneNumber, workingHours, productList = []) {
     super(name, surname, email, password, birthday)
@@ -94,11 +93,11 @@ class Seller extends User {
     this.productList.push(newProductList)
   }
   removeProductFromProductList(productId) {
-    const elem = this.productList.filter(item => item.productId === productId);
-    if (!elem) {
+    const removedProduct = this.productList.filter(item => item.productId === productId);
+    if (!removedProduct.length ) {
       return 'There is no such product in the product list'
     } else {
-      this.productList.splice(this.productList.indexOf(elem), 1)
+      this.productList.splice(this.productList.indexOf(removedProduct ), 1)
       return 'Product has been removed'
     }
   }
